@@ -1,8 +1,3 @@
-/* ==========================================
-   頂部導覽列（橘色底、白字、滑鼠Hover底線效果）
-   ========================================== */
-
-/* 清除網頁邊緣的預設空格 */
 /* 基本設定 */
 * {
     margin: 0;
@@ -51,6 +46,38 @@ body {
 .logo a:hover {
     opacity: 0.85;
 }
+
+/* 中間導覽選單外層清單 */
+.nav-links {
+    display: flex;
+    list-style: none;/* 移除點點符號 */
+  align-items:center;justify-content:center;
+  margin:0px;
+  padding:0px;
+}
+
+/* 讓選單裡的項目保持間距 */
+.nav-links li {
+    margin: 0 20px;
+}
+
+/* 選單文字樣式：白色、加粗、預設稍微帶一點透明 */
+.nav-links a {
+    display: block;
+    padding: 10px 0;    /* ✨ 關鍵：給文字上下加上對稱的空間，讓 Flex 更精準地抓到中線 */
+    line-height: 1;
+    text-decoration: none;
+    color: #ffffff;         
+    font-weight: 600;
+    transition: opacity 0.2s, text-decoration 0.2s;
+}
+
+/* 💡 關鍵修正：當滑鼠移上去（Hover）時，亮度全開並顯示底線 */
+.nav-links a:hover {
+    opacity: 0.85;             
+    text-decoration: underline; /* 滑鼠移上去顯現底線 */
+}
+
 
 /* 中間導覽選單外層清單 */
 .nav-links {
